@@ -2,7 +2,7 @@
 FROM node:20-alpine
 
 # Create a new group 'app' and a system user 'ash' in that group
-RUN addgroup ash && adduser -S -G app ash
+RUN addgroup app && adduser -S -G app ash
 
 # Switch to the non-root user 'app' for better security
 USER ash
