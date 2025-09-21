@@ -1,0 +1,20 @@
+# Docker Basic Commands
+# Docker Images
+docker build -t myapp .            # Build image from Dockerfile
+docker images                       # List images
+docker rmi <image_id>               # Remove image
+
+# Docker Containers
+docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules myapp   # Run container with bind mount
+docker ps                            # List running containers
+docker ps -a                         # List all containers
+docker stop <container_id>           # Stop container
+docker rm <container_id>             # Remove container
+
+# Docker Volumes
+docker volume ls                     # List volumes
+docker volume rm <volume_name>       # Remove volume
+
+# Common Dev Commands
+docker exec -it <container_id> sh   # Enter container shell
+docker logs <container_id>          # View container logs
